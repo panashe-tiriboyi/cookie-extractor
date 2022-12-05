@@ -6,5 +6,4 @@ urlpatterns = [
 path('', views.listcookies,name='CookieList'),
 path('<int:pk>/', CookieDetail.as_view()),
 path('db_cookies', CookieList.as_view()),
-
 ]
