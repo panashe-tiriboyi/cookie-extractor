@@ -188,6 +188,7 @@ function Table(props) {
             type="text"
             onKeyDown={handleOnchange}
           />
+          <h3>OR</h3>
           <Uploader handleData={handleData} handleLoading={handleLoading} />
           <img
             className="clear-icon"
@@ -247,7 +248,10 @@ function Table(props) {
           <div className="empty">
             <Empty
               description={
-                <span>Welcome &#128522; ,Enter url to extract Cookies</span>
+                <span>
+                  Welcome &#128522; ,Enter url <strong>OR</strong> Choose a text
+                  file containing urls to extract Cookies
+                </span>
               }
               image="https://gw.alipayobjects.com/mdn/miniapp_social/afts/img/A*pevERLJC9v0AAAAAAAAAAABjAQAAAQ/original"
               imageStyle={{

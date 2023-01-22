@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./uploader.css";
 
 const Uploader = (props) => {
   const [data, setData] = useState([]);
@@ -71,7 +72,12 @@ const Uploader = (props) => {
 
   return (
     <div>
-      <input type="file" name="file" onChange={handleUpload}></input>
+      <input
+        className=" "
+        type="file"
+        name="file"
+        onChange={handleUpload}
+      ></input>
     </div>
   );
 };
