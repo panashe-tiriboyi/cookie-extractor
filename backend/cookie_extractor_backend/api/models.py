@@ -21,3 +21,13 @@ class CookieDbTest(models.Model):
     
     def __str__(self):
         return self.ID	
+
+class ClientDomains(models.Model):
+    username = models.ForeignKey('accounts.CustomUser', on_delete=models.CASCADE)
+    domain= models.ForeignKey(Cookie, on_delete=models.CASCADE)
+
+class Domain(models.Model):
+   cookie_domain = models.CharField(max_length=30, unique=True, db_index=True)
+   date_last_added = models.DateField(auto_now=True)
+   def __str__(self) :
+       return self.cookie_domain
