@@ -1,0 +1,12 @@
+input[type="file"] {
+  background-color: #127850; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 12px;
+  margin-left: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 12px;
+}
