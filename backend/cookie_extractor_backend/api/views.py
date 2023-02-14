@@ -14,12 +14,15 @@ from random import randrange
 import time
 import re
 from rest_framework import generics
-from .serializers import CookieSerializer,DataBaseCookieSerializer
+from rest_framework import viewsets
+from .serializers import CookieSerializer,DataBaseCookieSerializer, ClientDomainsSerializer, DomainSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view,permission_classes
 from .cookie_extractor import Extractor
 import chromedriver_autoinstaller
 from .models import Cookie
+from .models import ClientDomains
+from .models import Domain
 
 chromedriver_autoinstaller.install()
 # Start Selenium
@@ -111,3 +114,26 @@ class CookieList(generics.ListCreateAPIView):
 class CookieDetail(generics.RetrieveUpdateDestroyAPIView):
   queryset = Cookie.objects.all()
   serializer_class = DataBaseCookieSerializer
+
+
+class ClientDomainsDetails(viewsets.ReadOnlyModelViewSet):
+    queryset = ClientDomains.objects.all()
+    serializer_class = ClientDomainsSerializer
+
+# @api_view(['GET', 'POST'])
+# def listdomians(request):
+#     if request.method == 'POST':
+#         return Response({"message": "Got some data!", "data": request.data})
+#     serializer_class = DomainSerializer(many=True)
+#     return Response(serializer_class.data)
+
+class DomainDetail(viewsets.ModelViewSet):
+  serializer_class = DomainSerializer
+
+  def get_queryset(self):
+    domain = Domain.objects.all()
+    return domain
+
+  
+
+

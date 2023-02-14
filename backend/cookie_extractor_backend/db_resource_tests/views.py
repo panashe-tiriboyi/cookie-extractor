@@ -30,6 +30,6 @@ def Check(tableName):
     diff = current_milli_time() - t1
     return diff 
 
-output = f'{Check(CookieDbTest)}  {Check(CookieDbTest1)} {Check(CookieDbTest2)} {Check(CookieDbTest3)} {Check(CookieDbTest4)}'       
+output = f'{Check(CookieDbTest)}  {Check(CookieDbTest1)} {Check(CookieDbTest2)} {Check(CookieDbTest3)} {Check(CookieDbTest4)}'      
 
 
